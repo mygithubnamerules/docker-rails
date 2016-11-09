@@ -8,7 +8,7 @@ ENV NODE_VERSION "6.3.1"
 ENV BOWER_VERSION "1.7.9"
 
 ENV APT_PACKAGES " \
-  git libmagickwand-dev imagemagick \
+  git libmagickwand-dev imagemagick libcurl3 \
   gcc g++ make patch binutils libc6-dev \
   libjemalloc-dev libffi-dev libssl-dev libyaml-dev zlib1g-dev libgmp-dev \
   libxml2-dev libxslt1-dev libpq-dev libreadline-dev libsqlite3-dev libmysqlclient-dev \
@@ -39,7 +39,7 @@ RUN gem install -v ${BUNDLER_VERSION} bundler
 
 RUN curl https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.gz \
   |tar -xz -C /usr --strip-components=1
-RUN npm install bower@${BOWER_VERSION} -g
+RUN npm install gulp -g
 
 RUN rm /etc/my_init.d/00_regen_ssh_host_keys.sh
 RUN rm -r /etc/service/sshd /etc/service/cron
