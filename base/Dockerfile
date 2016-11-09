@@ -8,7 +8,7 @@ ENV NODE_VERSION "6.3.1"
 ENV BOWER_VERSION "1.7.9"
 
 ENV APT_PACKAGES " \
-  git imagemagick \
+  git libmagickwand-dev imagemagick \
   gcc g++ make patch binutils libc6-dev \
   libjemalloc-dev libffi-dev libssl-dev libyaml-dev zlib1g-dev libgmp-dev \
   libxml2-dev libxslt1-dev libpq-dev libreadline-dev libsqlite3-dev libmysqlclient-dev \
